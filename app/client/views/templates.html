@@ -1,0 +1,122 @@
+<template name="appLayout">
+        {{> yield}}
+</template>
+
+<template name="home">
+
+    <div id="container">
+        <section id="home-selection">
+            <h1>XDESIGN CRAWFISH BOIL</h1>
+            <h2>April 30<sup>th</sup> | 5:30 PM <em>til</em> 8:30 PM
+                <br>8530 Quarters Lake Road | Baton Rouge, LA 70809
+            </h2>
+            
+            <figure><img src="/img/crawfish.png" alt=""></figure>
+
+            <div class="width-100">
+                <a href="/reservations" class="btn btn-material" id="reservation-btn">
+                    <span>Yes, See You There</span>
+                </a>
+            </div>
+
+            <div class="width-100">
+                <a href="/sorry" class="btn btn-material">
+                    <span>Sorry, I Can't Make It</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+</template>
+
+<template name="reservations">
+    <div id="container">
+        <span class="crawfish reservations">
+            <figure><img src="/img/crawfish.png" alt=""></figure>
+        </span>
+
+        <span id="guest-number" class="off animated">
+            <span>1</span>
+        </span>
+
+        <section id="reservation" class="off">
+            <h1>Cheers! Let us know who to expect.</h1>
+            <div class="input-group">
+                <label>
+                    <span>
+                        <input type="text" id="name">
+                    </span>
+                    Your Name
+                </label>
+                <label>
+                    <span>
+                        <input type="text" id="company">
+                    </span>
+                    Your Company
+                </label>
+                <label>
+                    <span>
+                        <input type="text" id="email">
+                    </span>
+                    Your Email
+                </label>
+            </div>
+
+            <div class="input-group">
+                <label class="margin-bottom">
+                    <span>
+                        <input type="text" id="guest" class="guests">
+                    </span>
+                    Guest Name
+                </label>
+
+                <div id="add-more">
+                    <i class="fa fa-plus-circle"></i>  Add Another Guest
+                </div>
+            </div>
+            
+            <div id="submit">
+                <button class="btn btn-material material-red">
+                    <span>Send it all in.</span>
+                </button>
+            </div>
+
+        </section>
+    </div>
+</template>
+
+<template name="thanks">
+    <div id="container" class="black">
+        <span class="crawfish thanks">
+            <figure><img src="/img/crawfish.png" alt=""></figure>
+        </span>
+
+        <section id="thanks" class="off">
+            <h1>See you soon, <em>Cher</em></h1>
+        </section>
+    </div>
+</template>
+
+<template name="sorry">
+    <div id="container">
+        <span class="crawfish reservations">
+            <i class="fontello-crawfish"></i>
+        </span>
+        <section id="reservation" class="off">
+            <h1>Oops, something went wrong.</h1>
+           
+            <p>Everyone loves having fun. Surely you jest.</p>
+            
+            <div id="submit">
+                <a class="btn btn-material material-red" href="reservations">
+                    <span>Let's fix this mistake.</span>
+                </a>
+
+                <a href="https://www.facebook.com/XdesignInc?fref=ts" class="btn btn-material material-red">
+                    <span>See all the fun you'll miss.</span>
+                </a>
+            </div>
+
+        </section>
+    </div>
+</template>

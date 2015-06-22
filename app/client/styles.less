@@ -1,0 +1,199 @@
+@import "/less/less-media-queries.import.less";
+@import "/less/x-mixins/custom-mixins.import.less";
+@import "/less/kube.import.less";
+/* =============================================================================
+   Imports
+   ========================================================================== */
+// @import url('../public/css/less/slick.less');
+// @import url('../public/css/less/icomoon.less');
+
+/* =============================================================================
+   Layout Code
+   ========================================================================== */
+/*
+ * Authors: John Gibby @thatgibbyguy || Quinton Jason @quintonjasonjr
+ *
+ * --------------
+ *
+ * Based on Kube
+ * Detailed information about this CSS: http://imperavi.com/kube/
+ *
+
+
+/* Fonts ===================================================================== */
+
+
+/* ==|== CSS Styles, IDs & Elements ===================================================== */
+
+html,body{ .square(100%); }
+body{ background: url('/img/building-bg.jpg'); background-size: cover; }
+
+#container{ .square(100%); .absolute; left: 0; top: 0; .trans; .flex-wrap-center-vertical; -ms-flex-direction: row; -ms-flex-align: center; -ms-flex-pack: center; background:rgba(255, 255, 255, 0.8);
+	&.black{ background: rgba(5, 5, 5, 0.9); }
+	&.flex-wrap-right{ .flex-wrap-right; }
+}
+
+#home-selection{ border: 2px solid #111; padding: 3em 6em; .text-center; height: auto; .trans;
+	&.off{ padding: 0; .opacity(0); }
+	h1{ font-family: 'Maven Pro', sans-serif; font-weight:900; .uppercase; color: @main-red; font-size: 1.2em; letter-spacing: .125em; }
+	h2{ font-family: 'Maven Pro', sans-serif; font-weight: 400; .uppercase; font-size: 1.15em; letter-spacing: .125em; }
+	.crawfish{ font-size: 20em; }
+	.btn{ padding: 1.25em; max-width:300px; width: 100%; margin: 1em 0 0; font-family: 'Maven Pro', sans-serif; font-weight: 400; .uppercase; font-size: .9em; }
+
+	[class^="width-"],[class*=" width-"]{ .block; }
+
+	figure{ width: 215px; margin: auto; }
+}
+
+#reservation{ .text-left; width: 80%; color: white; font-family: 'Maven Pro', sans-serif; .relative; z-index: 2;
+	&.off{ .opacity(0); }
+	h1{ font-family: 'Maven Pro', sans-serif; font-weight:700; margin-bottom: 2em; color: white; font-size: 1.5em; }
+	.input-group{ margin-bottom: 1.5em; }
+	label{ display: inline-block; width: 32%; color:white; font-family: 'Maven Pro', sans-serif; .uppercase; 
+		span{ .relative; .block;
+			&:after{ content: " "; display: block; height: 3px; background: white; width: 0; left: 0; bottom: 0; .absolute; }
+		}
+		&:focus{ background: white;
+			&:after{ width: 100%; }
+		}
+	}
+	input[type="text"]{ width: 90%; background: transparent; border: 0 none; border-bottom: 1px solid white; .relative; .trans; margin-bottom: 1em; padding: 1em; color: white;
+		&.required{ border: 1px solid @main-red; }
+		&:focus{ background: rgba(255, 255, 255, 0.2); .box-shadow(0 0 0);  }
+	}
+}
+
+#add-more{ .pointer; display: inline-block; margin-top: 3em; 
+	i{ margin-right: .5em; font-size: 1.5em; }
+}
+#submit{ margin-top: 5em; }
+
+.margin-bottom{ margin-bottom: 1.5em; }
+
+//.btn-material(@color-black);
+
+.crawfish{ color: @main-red; 
+	img{ max-width: 280px; .trans; }
+	&.reservations{ .absolute; top: 15%; left: -800px; font-size: 40em; .trans; 
+		&.on{ left: -130px; }
+	}
+	&.thanks{ .absolute; top: 15%; left: -49%; font-size: 40em; .trans; .square(100%); .text-center;
+		&.on{ top: 15%; left: 0; font-size: 20em; 
+			img{ max-width: 180px; }
+		}
+	}
+}
+
+#guest-number{ background:@main-red; .fixed; top: 1em; right: 1em; padding:1em 1.5em; color: white; .circles(40px); .trans(0.5);
+	&.off{ .opacity(0); }
+	&.flash{ background: white; color: @main-red; }
+}
+
+@-webkit-keyframes flash {
+   0%{ background:white;}
+   50%{ background: @main-red; }
+   100%{ background:white;}
+}
+@-moz-keyframes flash {
+   0%{ background:white;}
+   50%{ background: @main-red; }
+   100%{ background:white;}
+}
+@-ms-keyframes flash {
+   0%{ background:white;}
+   50%{ background: @main-red; }
+   100%{ background:white;}
+}
+@-o-keyframes flash {
+   0%{ background:white;}
+   50%{ background: @main-red; }
+   100%{ background:white;}
+}
+@keyframes flash {
+  0%{ background:white;}
+  50%{ background: @main-red; }
+  100%{ background:white;}
+}
+
+#thanks{ padding-top: 12em; .trans(1);
+	&.off{ .opacity(0); }
+	h1{ margin-top: 1.75em; font-size: 1.5em; font-family: 'Maven Pro', sans-serif; color: white; padding:1em 1.5em; border: 2px solid white; font-weight: 200; 
+		em{ font-family: 'Georgia',serif; font-weight: 100; text-transform: none; }
+	}
+}
+
+
+/* ==|== Custom LESS Variables ===================================================== */
+
+@main-red:#C0272D;
+
+/* ==|== Custom LESS Mixins ===================================================== */
+
+.headlines{  }
+.subhead{  }
+.bodycopy{  }
+.btn{  }
+
+.no-margin{ margin: 0; }
+.no-padding{ padding: 0; }
+.upper{ text-transform: uppercase; }
+.centered{ text-align: center; }
+.italic{ font-style: italic; }
+.no-bull{ list-style: none; }
+.show{ display: block; }
+.hide{ display: none; }
+.rounded-corners (@radius: 10px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+/* ==|== Responsive Styles ===================================================== */
+
+@media @genericMobile{
+}
+
+@media @genericPhablet{
+	#home-selection{
+		figure{ width: 150px; }
+	}
+}
+
+@media @genericPhone{
+	#home-selection{ padding: 1.5em 1.5em; border: 0;
+		h1{ font-size: 1em; }
+		h2{ letter-spacing: .0625em; font-size: .9em; }
+		.btn{ padding: .75em; }
+		figure{ width: 115px; }
+	}
+	.crawfish{
+		img{max-width: 180px; }
+		&.reservations{ .hide; font-size: 15em; top: 61%; left: -320px; 
+			&.on{ left: -155px; }
+		}
+		&.thanks{ overflow: hidden; font-size: 15em; top: 0;
+			&.on{ font-size: 1em; top: 0; 
+				img{ margin-top: 1.75em; }
+			}
+		}
+	} 
+	#reservation{ width: 90%; margin: auto; 
+		h1{ margin-bottom: 0em; }
+		label{ width: 48%; }
+		.input-group{ margin-bottom: .0em; }
+		input[type="text"]{padding: .4em; }
+		.margin-bottom{ margin-bottom: 0; }
+	}
+	#add-more{ margin-top: 1em; }
+	#guest-number{ top: auto; bottom: 2em; }
+
+	#thanks{
+		h1{ font-size: 1.15em; padding: .75em; }
+	}
+
+	.crawfish{  }
+	#submit{ margin-top: 1.25em; }
+}
+

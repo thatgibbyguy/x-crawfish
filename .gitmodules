@@ -1,0 +1,3 @@
+[submodule "app/client/less/x-mixins"]
+	path = app/client/less/x-mixins
+	url = https://gibbyxdesign@bitbucket.org/gibbyxdesign/x-mixins.git

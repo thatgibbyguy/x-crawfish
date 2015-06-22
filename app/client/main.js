@@ -1,0 +1,1 @@
+fader = function(){$('#container').addClass('black');}
